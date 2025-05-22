@@ -1,17 +1,17 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QStackedWidget
+from PyQt5.QtWidgets import QApplication, QStackedWidget, QWidget
 from screens.welcome import WelcomeScreen
 from screens.login import LoginScreen
 from screens.register import RegisterScreen
 from screens.guest import GuestScreen 
 app = QApplication(sys.argv)
-
 stack = QStackedWidget()
+stack.setWindowTitle("Dodocare") 
 
 welcome = WelcomeScreen(stack)
 login = LoginScreen(stack)
 register = RegisterScreen(stack)
-guest = GuestScreen(stack) # Asumiendo que tengamos la pantalla de invitado
+guest = GuestScreen(stack) 
 
 stack.addWidget(welcome)   # index 0
 stack.addWidget(login)     # index 1
